@@ -2,10 +2,26 @@ import 'dart:io';
 import 'calculadora.dart';
 void main(List<String> args){
    var calculadora =  menu();
-   print((calculadora.somaValor != null) ? calculadora.somaValor : '--------');
-   print((calculadora.subtracaoValor != null) ? calculadora.subtracaoValor :'--------');
-   print((calculadora.multiplicacaoValor != null) ? calculadora.multiplicacaoValor :'--------');
-   print((calculadora.divisaoValor != null) ? calculadora.divisaoValor : '--------');
+     print('');
+   if(calculadora.somaValor != null){
+     print('');
+    print(calculadora.somaValor);
+   }else if(calculadora.subtracaoValor !=  null){
+     print('');
+    print(calculadora.subtracaoValor);
+   }else if(calculadora.multiplicacaoValor != null){
+    print('');
+    print(calculadora.multiplicacaoValor);
+   }else if(calculadora.divisaoValor != null){
+    print('');
+    print(calculadora.divisaoValor);
+   }else{
+    print('');
+    print('Nenhuma operação executado.');
+   }
+   print('');
+   print(calculadora.toString());
+   
 }
 /// Menu 
 Calculadora menu(){

@@ -7,6 +7,9 @@ class Calculadora implements InterfaceCalculadora{
   double? _valor2;
 
   Calculadora({required double op,required double valor1,required double valor2}){
+    this.op = op;
+    this.valor1 = valor1;
+    this.valor2 = valor2;
     escolha(op: op, valor1: valor1, valor2: valor2);
   }
 
@@ -76,4 +79,6 @@ double divisao({required double valor1,required double valor2}){
  var divisaoValorLocal = valor1 / valor2;
   return divisaoValorLocal; 
 }
+@override
+String toString() => 'Opção: $op, valor1: $valor1, valor2: $valor2';
 }
