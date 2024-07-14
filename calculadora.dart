@@ -1,6 +1,7 @@
 import 'dart:io';
+import 'interface_calculadora.dart';
 
-class Calculadora{
+class Calculadora implements InterfaceCalculadora{
   double? _op;
   double? _valor1;
   double? _valor2;
@@ -38,5 +39,37 @@ class Calculadora{
       exit(0);
     }
   }
+// implementando a interface calculadora
+@override
+double? somaValor;
+@override
+double? subtracaoValor;
+@override
+double? multiplicacaoValor;
+@override
+double? divisaoValor;
 
+@override
+double soma({required double valor1,required double valor2}){
+ somaValor = valor1 + valor2;
+ return somaValor ?? 0.0;
+}
+
+@override
+double subtracao({required double valor1,required double valor2}){
+  subtracaoValor = valor1 - valor2;
+  return subtracaoValor ??  0.0;
+}
+
+@override
+double multiplicacao({required double valor1,required double valor2}){
+ multiplicacaoValor = valor1 * valor2;
+ return multiplicacaoValor ?? 0.0;
+}
+
+@override 
+double divisao({required double valor1,required double valor2}){
+  divisaoValor = valor1 / valor2;
+  return divisaoValor ?? 0.0; 
+}
 }
