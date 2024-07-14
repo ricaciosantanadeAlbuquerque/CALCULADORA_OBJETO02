@@ -24,6 +24,7 @@ void menu(){
    if(entradaValor1 != null && entradaValor2 != null){
       if(entradaValor1.isNotEmpty && entradaValor2.isNotEmpty){
           try{
+             double opcao = double.tryParse(entradaOp) ?? 0.0;
              double valor1 = double.tryParse(entradaValor1) ?? 0.0;
              double valor2 = double.tryParse(entradaValor2) ?? 0.0;
           }catch(e){
