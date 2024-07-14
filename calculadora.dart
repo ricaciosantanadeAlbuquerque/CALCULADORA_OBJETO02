@@ -6,8 +6,8 @@ class Calculadora implements InterfaceCalculadora{
   double? _valor1;
   double? _valor2;
 
-  Calculadora({required double op,required double valo1,required double valor2}){
-    escolha(op: op, valo1: valo1, valor2: valor2);
+  Calculadora({required double op,required double valor1,required double valor2}){
+    escolha(op: op, valor1: valor1, valor2: valor2);
   }
 
   double? get op => this._op;
@@ -23,15 +23,19 @@ class Calculadora implements InterfaceCalculadora{
   void set valor2(double? valor2) => this._valor2 = valor2;
 
 
-  void escolha({required double op,required double valo1,required double valor2}){
+  void escolha({required double op,required double valor1,required double valor2}){
     switch(op){
       case 1:
+     somaValor = soma(valor1: valor1, valor2: valor2);
       break;
       case 2:
+      subtracaoValor = subtracao(valor1: valor1, valor2: valor2);
       break;
       case 3:
+      multiplicacaoValor = multiplicacao(valor1: valor1, valor2: valor2);
       break;
       case 4:
+      divisaoValor = divisao(valor1: valor1, valor2: valor2);
       break;
       default:
       print('ERRO! valor fora da faixa !!');
@@ -51,25 +55,25 @@ double? divisaoValor;
 
 @override
 double soma({required double valor1,required double valor2}){
- somaValor = valor1 + valor2;
- return somaValor ?? 0.0;
+ var somaValorLocal = valor1 + valor2;
+ return somaValorLocal;
 }
 
 @override
 double subtracao({required double valor1,required double valor2}){
-  subtracaoValor = valor1 - valor2;
-  return subtracaoValor ??  0.0;
+  var subtracaoValorLocal = valor1 - valor2;
+  return subtracaoValorLocal;
 }
 
 @override
 double multiplicacao({required double valor1,required double valor2}){
- multiplicacaoValor = valor1 * valor2;
- return multiplicacaoValor ?? 0.0;
+ var multiplicacaoValorLocal = valor1 * valor2;
+ return multiplicacaoValorLocal;
 }
 
 @override 
 double divisao({required double valor1,required double valor2}){
-  divisaoValor = valor1 / valor2;
-  return divisaoValor ?? 0.0; 
+ var divisaoValorLocal = valor1 / valor2;
+  return divisaoValorLocal; 
 }
 }

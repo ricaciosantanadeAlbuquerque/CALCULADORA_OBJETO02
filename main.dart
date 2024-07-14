@@ -1,11 +1,14 @@
 import 'dart:io';
-
-void main(List<String> args) {
-  menu();
+import 'calculadora.dart';
+void main(List<String> args){
+   var calculadora =  menu();
+   print((calculadora.somaValor != null) ? calculadora.somaValor : '--------');
+   print((calculadora.subtracaoValor != null) ? calculadora.subtracaoValor :'--------');
+   print((calculadora.multiplicacaoValor != null) ? calculadora.multiplicacaoValor :'--------');
+   print((calculadora.divisaoValor != null) ? calculadora.divisaoValor : '--------');
 }
-
-/// Menu
-void menu() {
+/// Menu 
+Calculadora menu(){
   print('==========Menu==========');
   print('Digite [1] para soma');
   print('Digite [2] para subtrair');
