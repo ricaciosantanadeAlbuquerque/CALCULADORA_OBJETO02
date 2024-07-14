@@ -53,7 +53,7 @@ Calculadora menu(){
             try {
               double valor1 = double.tryParse(entradaValor1) ?? 0.0;
               double valor2 = double.tryParse(entradaValor2) ?? 0.0;
-              print('opção: $opcao valor 1 : $valor1, valor 2 : $valor2');
+               return Calculadora(op: opcao, valor1: valor1, valor2: valor2);
             } catch (e) {
               throw Exception('ERRO! ${entradaValor1} e ${entradaValor2} não podem ser convertidos para double');
             }
