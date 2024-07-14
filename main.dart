@@ -1,11 +1,30 @@
 import 'dart:io';
-
-void main(List<String> args) {
-  menu();
+import 'calculadora.dart';
+void main(List<String> args){
+   var calculadora =  menu();
+     print('');
+   if(calculadora.somaValor != null){
+     print('');
+    print(calculadora.somaValor);
+   }else if(calculadora.subtracaoValor !=  null){
+     print('');
+    print(calculadora.subtracaoValor);
+   }else if(calculadora.multiplicacaoValor != null){
+    print('');
+    print(calculadora.multiplicacaoValor);
+   }else if(calculadora.divisaoValor != null){
+    print('');
+    print(calculadora.divisaoValor);
+   }else{
+    print('');
+    print('Nenhuma operação executado.');
+   }
+   print('');
+   print(calculadora.toString());
+   
 }
-
-/// Menu
-void menu() {
+/// Menu 
+Calculadora menu(){
   print('==========Menu==========');
   print('Digite [1] para soma');
   print('Digite [2] para subtrair');
@@ -34,7 +53,7 @@ void menu() {
             try {
               double valor1 = double.tryParse(entradaValor1) ?? 0.0;
               double valor2 = double.tryParse(entradaValor2) ?? 0.0;
-              print('opção: $opcao valor 1 : $valor1, valor 2 : $valor2');
+               return Calculadora(op: opcao, valor1: valor1, valor2: valor2);
             } catch (e) {
               throw Exception('ERRO! ${entradaValor1} e ${entradaValor2} não podem ser convertidos para double');
             }
